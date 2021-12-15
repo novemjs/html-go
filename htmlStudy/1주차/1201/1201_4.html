@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>테이블예제3</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+        #tb{
+           /* width:300px;
+            height:300px;*/
+            border-collapse: collapse;
+        }
+        td,th{
+            border:1px solid #000;
+        }
+    
+    </style>
+</head>
+<body>
+   <caption>회원내역</caption>
+    <table id="tb" width="50%" align="center"><!--width는 화면의 폭지정-->
+        <tr>
+            <th>이름</th>
+            <td>홍길동</td>
+            <th>연락처</th>
+            <td>010-1234-5678</td>
+        </tr>
+        <tr>
+            <th>주소</th>
+            <td colspan="3">부산광연시 동래구</td>
+        </tr>
+        <tr>
+            <th rowspan="2">취미</th>
+            <td colspan="3">농구</td>
+        </tr>
+        <tr>
+            <td colspan="3">독서</td>
+        </tr>
+    </table>
+</body>
+</html>

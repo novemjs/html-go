@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>상품리스트</title>
+    <style>
+
+        :root {
+          --commWidth: calc((1000px / 4) - 20px);
+        }
+        
+        body,ul,li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .con {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1000px;
+        }
+        
+        .cell {
+            float: left;
+            box-sizing: border-box;
+            margin-bottom: 100px;
+            margin-right: 20px;
+            width: var(--commWidth);
+            height: var(--commWidth);
+            padding: 10px;
+        }
+
+        .imgBox > img {
+            display: block;
+            border: 1px solid blue;
+            width:var(--commWidth);
+            height: var(--commWidth);
+        }
+
+        .list>ul>li {
+            width: var(--commWidth);
+            padding: 0 20px;
+        }
+
+        .list>ul>li>.bookName,.list>ul>li>.bookAuthor {
+            text-align: center;
+            font-weight: bold;
+            width: var(--commWidth);
+            word-break: keep-all;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="list con">
+        <ul class="row">
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p1.jpg" alt="이미지1">
+                </div>
+                <div class="bookName">개발자에서 아키텍트로</div>
+                <div class="bookAuthor">마이클 킬링</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p2.jpg" alt="이미지2">
+                </div>
+                <div class="bookName">머신러닝을 활용한 웹 최적화</div>
+                <div class="bookAuthor">이쓰카 슈헤이</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p3.jpg" alt="이미지3">
+                </div>
+                <div class="bookName">파이썬으로 살펴보는 아키텍처 패턴</div>
+                <div class="bookAuthor">해리 퍼시벌,밥 그레고리</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p4.jpg" alt="이미지4">
+                </div>
+                <div class="bookName">NGINX 쿡북</div>
+                <div class="bookAuthor">데릭 디용기</div>
+            </li>            
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p5.jpg" alt="이미지5">
+                </div>
+                <div class="bookName">린 AI</div>
+                <div class="bookAuthor">로밋 파텔</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p6.jpg" alt="이미지6">
+                </div>
+                <div class="bookName">파이토치로 배우는 자연어 처리</div>
+                <div class="bookAuthor">델립 라오,브라이언 맥머핸</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p7.jpg" alt="이미지7">
+                </div>
+                <div class="bookName">보고서 발표 실무 강의 - 잘 쓰고 제대로 전달하는 보고의 기술</div>
+                <div class="bookAuthor">채종서</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p8.jpg" alt="이미지8">
+                </div>
+                <div class="bookName">소문난 명강의 : 오준석의 플러터 생존코딩(개정판)</div>
+                <div class="bookAuthor">오준석</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p9.jpg" alt="이미지9">
+                </div>
+                <div class="bookName">모던 자바스크립트 핵심 가이드</div>
+                <div class="bookAuthor">알베르토 몬탈레시</div>
+            </li>
+            <li class="cell">
+                <div class="imgBox">
+                    <img src="img/p10.jpg" alt="이미지10">
+                </div>
+                <div class="bookName">고성능 파이썬(2판)</div>
+                <div class="bookAuthor">미샤 고렐릭,이안 오스발트</div>
+            </li>   
+        </ul>
+    </div>
+</body>
+
+</html>

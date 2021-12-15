@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @keyframes sample{
+            /*0초 처음 애니메이션 동작 설정*/
+            0%{
+                background: firebrick;
+                transform: translate(0,0);
+                /*왼쪽상단 모서리부터 애니메이션 시작*/
+            }
+            /*2초후에 애니메이션 동작 처리*/
+            50%{
+                background: cornflowerblue;
+                transform: translate(30px,20px);
+            }
+            /*4초 후에 애니메이션 지정*/
+            100%{
+                background: forestgreen;
+                transform: translate(0,0);
+            }
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            animation-name: sample; /*@keyframes에 설정된 애니메이션 동작을 사용한다는 선언, @keyframes에 설정된 명칭과 동일해야한다*/
+            animation-duration:4s; /*애니메이션 동작4초*/
+            animation-fill-mode: forwards; /*이 설정이 없으면 애니메이션 처음 속성으로 돌아간다.*/
+            animation-iteration-count: infinite;
+            /*애니메이션 반복설정*/
+            animation-direction: reverse;
+            /*애니메이션 실행 방향 설정:반대순서로 실행*/
+        }
+    </style>
+</head>
+<body>
+    <p>Animation</p>
+</body>
+</html>

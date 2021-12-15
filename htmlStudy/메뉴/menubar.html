@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>화면 분할</title>
+    <style>
+        /* 전체에 적용하기 위한 설정 */
+        :root {
+            --commWidth: calc((750px / 3) - 25px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            list-style-type: none;
+        }
+
+        #header,
+        #footer,
+        p {
+            text-align: center;
+        }
+
+        .sizing_list {
+            margin: 0 auto;
+        }
+
+        .sizing_list li {
+            float: left;
+            width: 20%;
+            /*            padding: 30px;*/
+            box-sizing: border-box;
+            /*            text-align: center;*/
+            background: #f9fcfc;
+            border: 1px solid red;
+        }
+
+
+        #topMenu {
+            height: 30px;
+            /* 메인 메뉴의 높이 */
+            width: 990px;
+            /* 메인 메뉴의 넓이 */
+        }
+
+        #topMenu ul {
+            /* 메인 메뉴 안의 ul을 설정함: 상위메뉴의 ul+하위 메뉴의 ul */
+            list-style-type: none;
+            /* 메인 메뉴 안의 ul 내부의 목록 표시를 없애줌 */
+            margin: 0px;
+            /* 메인 메뉴 안의 ul의 margin을 없앰 */
+            padding: 0px;
+            /* 메인 메뉴 안의 ul의 padding을 없앰 */
+        }
+
+        /* 메인 메뉴 안에 ul 태그 안에 있는 li 태그의 스타일 적용(상위/하위메뉴 모두) */
+        #topMenu ul li {
+            /* 글씨 색을 흰색으로 설정 */
+            color: white;
+            /* 배경 색을 RGB(2D2D2D)로 설정 */
+            background-color: #2d2d2d;
+            /* 왼쪽으로 나열되도록 설정 */
+            float: left;
+            /* 텍스트 한 줄의 높이를 30px로 설정 */
+            line-height: 30px;
+            /* 세로 정렬을 가운데로 설정 */
+            vertical-align: middle;
+            /* 텍스트를 가운데로 정렬 */
+            text-align: center;
+            /* 해당 li 태그 내부의 top/left 포지션 초기화 */
+            position: relative;
+
+        }
+
+        /* 상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일 */
+        .menuLink,
+        .submenuLink {
+            /* a 태그의 꾸밈 효과 제거 */
+            text-decoration: none;
+            /* a 태그의 클릭 범위를 넓힘 */
+            display: block;
+            /* 기본 넓이를 150px로 설정 */
+            width: 147px;
+            /* 폰트 사이즈를 12px로 설정 */
+            font-size: 12px;
+            /* 폰트를 굵게 설정 */
+            font-weight: bold;
+            /* 기본 폰트 설정 */
+            font-family: "맑은고딕";
+
+        }
+
+        .menuLink {
+            /* 상위 메뉴의 글씨색을 흰색으로 설정 */
+            color: white;
+        }
+
+        /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */
+        .topMenuLi:hover .menuLink {
+            /* 글씨 색 빨간색 */
+            color: red;
+            /* 배경색을 밝은 회색으로 설정 */
+            background-color: #4d4d4d;
+        }
+
+        .submenuLink {
+            /* 하위 메뉴의 a 태그 스타일 설정 */
+            color: #2d2d2d;
+            /* 글씨 색을 RGB(2D2D2D)로 설정 */
+            background-color: white;
+            /* 배경색을 흰색으로 설정 */
+            border: solid 1px blue;
+            /* 
+              위칸의 하단 테두리와 아래칸의 상단 테두리가 겹쳐지도록 설정 
+            */
+            margin-top: -1px;
+
+        }
+
+        .longLink {
+            /* 좀 더 긴 메뉴 스타일 설정 */
+            width: 150px;
+            /* 넓이는 150px로 설정 */
+        }
+
+        /* 하위 메뉴 스타일 설정 */
+        .submenu {
+            /* html의 flow에 영향을 미치지 않게 absolute 설정 */
+            position: absolute;
+            /* 초기 높이는 0px로 설정 */
+            height: 0px;
+            /* 실 내용이 높이보다 커지면 해당 내용 감춤 */
+            overflow: hidden;
+            /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(기본) */
+            transition: height .2s;
+            /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(구버전 크롬/사파리) */
+            -webkitd-transition: height .2s;
+            /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(구버전 파폭) */
+            -moz-transition: height .2s;
+            /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(구버전 오페라) */
+            -o-transition: height .2s;
+        }
+
+        /* 상위 메뉴에 마우스 오버한 경우 그 안의 하위 메뉴 스타일 설정 */
+        .topMenuLi:hover .submenu {
+            /* submenu 높이 설정 */
+            height: 200px;
+        }
+
+        /* 하위 메뉴의 a 태그의 마우스 오버 스타일 설정 */
+        .submenuLink:hover {
+            /* 글씨색을 빨간색으로 설정 */
+            color: red;
+            /* 배경색 지정 */
+            background-color: #c2e8d2;
+        }
+
+        .con {
+   /*         margin-left: auto;
+            margin-right: auto;*/
+            max-width: 1000px;
+        }
+
+        .cell {
+            float: left;
+            box-sizing: border-box;
+            margin-bottom: 80px;
+            margin-right: 25px;
+            width: var(--commWidth);
+            height: var(--commWidth);
+            padding: 10px;
+        }
+
+        .imgBox>img {
+            display: block;
+            border: 1px solid blue;
+            width: var(--commWidth);
+            height: var(--commWidth);
+        }
+
+        .list>ul>li {
+            width: var(--commWidth);
+/*            padding: 0 0px;*/
+        }
+
+        .list>ul>li>.bookName,
+        .list>ul>li>.bookAuthor {
+/*            text-align: center;
+            font-weight: bold;*/
+            font-size: 12px;
+            width: var(--commWidth);
+            word-break:break-all;
+        }
+        
+        .list>ul>li>.bookName {
+            color:blueviolet;
+        }
+        
+        .list>ul>li>.bookAuthor {
+            color:blue;
+        }
+        
+        
+        #img1:hover {
+            content: url(img/sub1.JPG);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div style="width:750px;height:200px">
+
+        <div id="header" style="background-color:#FFA500;">
+            <h1 style="margin-bottom: 0">Fun Shopping</h1>
+        </div>
+
+        <div id="topMenu">
+            <ul>
+                <li class="topMenuLi">
+                    <a class="menuLink" href="#">회사소개</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="submenuLink longLink">회사연혁</a></li>
+                        <li><a href="#" class="submenuLink longLink">조직도</a></li>
+                        <li><a href="#" class="submenuLink longLink">찾아오시는길</a></li>
+                    </ul>
+                </li>
+                <li>|</li>
+                <li class="topMenuLi">
+                    <a class="menuLink" href="#">상품관리</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="submenuLink longLink">상품등록</a></li>
+                        <li><a href="#" class="submenuLink longLink">상품수정</a></li>
+                        <li><a href="#" class="submenuLink longLink">상품삭제</a></li>
+                    </ul>
+                </li>
+                <li>|</li>
+                <li class="topMenuLi">
+                    <a class="menuLink" href="#">게시판</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="submenuLink">고객게시판</a></li>
+                        <li><a href="#" class="submenuLink">공지사항</a></li>
+                    </ul>
+                </li>
+                <li>|</li>
+                <li class="topMenuLi">
+                    <a class="menuLink" href="#">로그인</a>
+                </li>
+                <li>|</li>
+                <li class="topMenuLi">
+                    <a class="menuLink" href="#">회원가입</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="list con">
+            <ul class="row">
+                <li class="cell">
+                    <div class="imgBox">
+                       <img src="/img/p1.jpg" id="img1" alt="이미지1">
+                    </div>
+                    <div class="bookName">개발자에서 아키텍트로</div>
+                    <div class="bookAuthor">마이클 킬링</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p2.jpg" alt="이미지2">
+                    </div>
+                    <div class="bookName">머신러닝을 활용한 웹 최적화</div>
+                    <div class="bookAuthor">이쓰카 슈헤이</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p3.jpg" alt="이미지3">
+                    </div>
+                    <div class="bookName">파이썬으로 살펴보는 아키텍처 패턴</div>
+                    <div class="bookAuthor">해리 퍼시벌,밥 그레고리</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p4.jpg" alt="이미지4">
+                    </div>
+                    <div class="bookName">NGINX 쿡북</div>
+                    <div class="bookAuthor">데릭 디용기</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p5.jpg" alt="이미지5">
+                    </div>
+                    <div class="bookName">린 AI</div>
+                    <div class="bookAuthor">로밋 파텔</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p6.jpg" alt="이미지6">
+                    </div>
+                    <div class="bookName">파이토치로 배우는 자연어 처리</div>
+                    <div class="bookAuthor">델립 라오,브라이언 맥머핸</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p7.jpg" alt="이미지7">
+                    </div>
+                    <div class="bookName">보고서 발표 실무 강의 - 잘 쓰고 제대로 전달하는 보고의 기술</div>
+                    <div class="bookAuthor">채종서</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p8.jpg" alt="이미지8">
+                    </div>
+                    <div class="bookName">소문난 명강의 : 오준석의 플러터 생존코딩(개정판)</div>
+                    <div class="bookAuthor">오준석</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p9.jpg" alt="이미지9">
+                    </div>
+                    <div class="bookName">모던 자바스크립트 핵심 가이드</div>
+                    <div class="bookAuthor">알베르토 몬탈레시</div>
+                </li>
+                <li class="cell">
+                    <div class="imgBox">
+                        <img src="/img/p10.jpg" alt="이미지10">
+                    </div>
+                    <div class="bookName">고성능 파이썬(2판)</div>
+                    <div class="bookAuthor">미샤 고렐릭,이안 오스발트</div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="footer" style="background-color: darkgrey;clear: both;">
+            &copy;한국기술교육직업전문학교 Tel.714-5709
+        </div>
+
+    </div>
+</body></html>

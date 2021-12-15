@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+        td,th{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="get">
+        <table align="center">
+           <colgroup>
+               <col style="background-color: yellow;">
+           </colgroup>
+            <caption>회원가입 입력</caption>
+            <tr>
+                <th>아이디</th>
+                <td>
+                    <input type="text" name="id" id="id" placeholder="아이디 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td>
+                    <input type="password" name="pw1" id="pw1" placeholder="비밀번호 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호 재입력</th>
+                <td>
+                    <input type="password" name="pw2" id="pw2" placeholder="비밀번호 재입력">
+                </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td>
+                    <input type="email" name="email" id="email" placeholder="이메일아이디 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>핸드폰 번호</th>
+                <td>
+                    <input type="text" name="num" id="num" placeholder="연락처 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>취미</th>
+                <td>
+                    <input type="checkbox" name="chk" id="chk">탁구
+                    <input type="checkbox" name="chk" id="chk">등산
+                    <input type="checkbox" name="chk" id="chk">농구
+                </td>
+            </tr>
+            <tr align="center">
+                <td style="background-color: white;" colspan="2">
+                    <input type="submit" value="회원가입">
+                    <input type="reset" value="취소">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*속성 선택자
+        input 태그중에 type이 checkbox로 선언되어 있는 것 중에 */
+        input[type=checkbox].css-checkbox{
+            border: none;
+            background: none;
+            position: absolute;
+            /*체크박스를 안보이게 처리 -> 체크박스는 이미지로 처리*/
+            left: -9999px;
+        }
+        /*인접한 label 태그에 대해 모두적용*/
+        input[type=checkbox].css-checkbox+label{
+            display: inline-block;
+            padding: 0 0 0 30px;
+            height: 20px;
+            line-height: 20px;
+            background: url(/img/bg_checkbox.png) no-repeat 0 0; /*반복하지않고 맨왼쪽에 위치함*/ 
+            background-size: 20px 40px;
+            vertical-align: middle;/*수직정렬*/
+        }
+        input[type=checkbox].css-checkbox:checked+label{
+            background-position: 0 -20px;
+            /*체크하면 배경이미지를 위로 20px밀어올려 체크부분이 보이게해줌*/
+        }
+    </style>
+</head>
+<body>
+    <h2>약관동의</h2>
+    <input type="checkbox" class="css-checkbox" id="chk1">
+    <label for="chk1">서비스 이용약관 동의</label><br>
+    <input type="checkbox" class="css-checkbox" id="chk2" checked><label for="chk2"> 개인정보 취급방침 동의</label><br>
+    <input type="checkbox" class="css-checkbox" id="chk3">
+    <label for="chk3">위치정보 활용 동의</label>
+</body>
+</html>

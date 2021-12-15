@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //재귀함수:자기자신을 호출하는 함수
+        function factorial(n){
+            if(n==1){
+                return 1;
+            }else{
+                return n*factorial(n-1);
+            }
+        }
+        document.write("5!의 값: "+factorial(5));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

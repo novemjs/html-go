@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body,div,p{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 20px;
+            background: url("/img/bg_grid.gif");
+        }
+        .box{
+            width: 650px;
+            background: rgba(0,0,0,0.3);
+            position: relative;
+            
+        }
+        p{
+            width: 250px;
+            height: 100px;
+            box-sizing: border-box; /*박스굵기, padding 미포함*/
+            padding: 10px;
+            font-weight: bold;
+        }
+        .red{
+            background: crimson;
+        }
+        .green{
+            background: lime;
+            /*상위요소기준 (static은제외)*/
+            position: absolute;
+            left: 70px;
+            top: 50px;
+            z-index: 1; 
+            /*박스의 위치를 이동시킨다. 양수의 값이 클수록 위로 배치됨 음수는 맨 바닥에 위치*/
+            
+        }
+        /*position:relative로 선언하면 자기자신의 위치를 기준으로 이동하므로 다른 박스에는 영향을 주지않는다*/
+        .blue{
+            background: dodgerblue;
+            position: relative;
+            left: 100px;
+            top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="red">박스의 크기와 위치를 잘 살펴보아야 합니다.</p>
+        <p class="green">박스의 포지션 속성을 바꿔가며 테스트해 보아야 합니다.</p>
+        <p class="blue">포지션을 이해하기 위해서는 시험해보고 관찰해 보는 것이 절대적으로 필요합니다.</p>
+    </div>
+</body>
+</html>

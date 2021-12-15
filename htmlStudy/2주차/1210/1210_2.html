@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .flexbox{
+            max-width: 750px;
+            display: flex;
+            display: -webkit-flex;
+            flex-wrap: wrap; /*자식요소가 많을경우 공간이 부족하면 아래에 표시*/
+            -webkit-flex-wrap:wrap;
+            height: 270px;
+            background: #ccc;
+            /*요소를 표시할때 위를 기준으로 표시*/
+            align-content: flex-start;
+            -webkit-align-content:flex-start;
+        }
+        .flexbox > div{
+            flex: 0 0 100px;
+            -webkit-flex:0 0 100px;
+            background: darkblue;
+            margin: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flexbox">
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+    </div>
+</body>
+</html>

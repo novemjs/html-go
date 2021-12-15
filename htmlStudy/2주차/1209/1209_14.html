@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .flexbox{
+            width: 750px;
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flex;
+            flex-wrap:wrap; /*자식요소가 많아 공간이부족하면 다음줄로간다.*/
+            -webkit-flex-wrap:wrap;
+            -ms-flex-wrap:wrap;
+            height: 200px;
+            background: #ccc;
+        }
+        .flexbox div{
+            /*flex-grow:0 --> 공간이 있어도 확장x
+            flex-shrink:1 --> 공간이 부족하면 수축(줄인다) flex-basis:100px(기본값)*/
+            flex:0 1 100px;
+            -webkit-flex:0 1 100px;
+            -ms-flex:0 1 100px;
+            background: darkblue;
+            margin: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div>child1</div>
+        <div>child2</div>
+        <div>child3</div>
+        <div>child4</div>
+        <div>child5</div>
+        <div>child6</div>
+        <div>child7</div>
+        <div>child8</div>
+    </div>
+</body>
+</html>

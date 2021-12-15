@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-image: url(/img/bg_grid.gif);
+        }
+        .box{
+            border: 1px solid blue;
+            height: 100px;
+            position: relative;
+            /*보통 자기자신을 기준으로 이동처리하고 상대방의 위치를 지정시 부모의 역할을 수행*/
+        }
+        
+        .absolute{
+            /*보통 바로 위의 상위요소 위치를 기준으로 이동처리하는데 이때 상위요소가 static으로 선언되어 있으면 제외한다. 만약 상위요소가 없으면 html을 기준으로 위치 이동한다.*/
+            /*부모요소인 div가 class="box"로 선언되어 있는데 position:relative로 되어있으므로 부모요소를 기준으로 오른쪽에서 0px, 위에서 40px만큼 떨어진위치에표시 */
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background: yellow;
+        }
+        span{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        div영역
+    </div>
+    <div class="box">
+        <span>span1</span>
+        <div class="absolute">absolute영역</div>
+        <span>span3</span>
+    </div>
+</body>
+</html>

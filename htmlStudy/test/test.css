@@ -1,0 +1,19 @@
+@charset "utf-8";
+.sp1{
+    color: red;
+}
+.sp2{
+    background-color: yellow;
+}
+.sp3{
+    background-color: lightpink;
+    color: blue;
+}
+.sp4{
+    text-decoration: underline;
+}
+p{
+    font-family: "맑은고딕";
+    font-size: 20px;
+    line-height: 50px;
+}

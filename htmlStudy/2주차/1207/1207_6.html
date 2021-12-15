@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        div{
+            border: 1px solid #000;
+        }
+        .jb-table{
+            display: table;
+            width: 100%;
+        }
+        .jb-table-row{ /*tr태그와 동일한기능*/
+            display: table-row;  /*한행(row)이 생성된다*/
+        }
+        
+        .jb-table-cell{
+            /*td태그와 동일한기능*/
+            display: table-cell;
+            padding: 0px 20px;
+            height: 150px;
+        }
+        .jb-top{
+            /*글자를 세로 수직정렬시키는데 위쪽에 표시*/
+            vertical-align: top;
+        }
+        .jb-middle{
+            vertical-align: middle;
+        }
+        .jb-bottom{
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div class="jb-table">
+        <div class="jb-table-row">
+            <div class="jb-table-cell">
+                <p>HTML</p>
+            </div>
+            <div class="jb-table-cell">
+                <p>자바</p>
+            </div>
+            <div class="jb-table-cell">
+                <p>오라클</p>
+            </div>
+        </div>
+        <div class="jb-table-row">
+            <div class="jb-table-cell jb-top">
+                <p>HTML</p>
+            </div>
+            <div class="jb-table-cell jb-middle">
+                <p>자바</p>
+            </div>
+            <div class="jb-table-cell jb-bottom">
+                <p>오라클</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

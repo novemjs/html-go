@@ -1,0 +1,15 @@
+@charset "utf-8";
+p:nth-of-type(odd){
+    font-size: 20px;
+    color: red;
+}
+p:nth-of-type(even){
+    font-size: 30px;
+    color:blue
+}
+.s2{
+    background-color: yellow;
+}
+.s1{
+    text-decoration: underline;
+}

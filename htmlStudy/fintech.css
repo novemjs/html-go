@@ -1,0 +1,13 @@
+@charset "utf-8";/*한글이깨짐을 방지하기위해*/
+
+p{
+    font-family:"궁서체";
+    font-size:20px;
+    line-height:1.5; /*줄간격 150프로 =1.5*/
+}
+
+span{
+    color:blue;
+    background-color: yellow;
+    
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //+,-,*,/
+        var num1=20,num2=10;
+        var score1=num1+num2;
+        var score2=num1-num2;
+        var score3=num1*num2;
+        var score4;
+        if(num2==0){
+           alert("분모는 0이 될수 없다.");
+        }else{
+           score4=num1/num2;
+        }
+        document.write(score1+","+score2+","+score3+","+score4+"<br>" );
+        var evenOdd=2;
+        var result=evenOdd%2;
+        var comment; 
+        //==는 값만 비교하고 ===는 값도비교하고 데이터타입도 비교한다.
+        if(result===0){
+            comment=evenOdd+'는 "짝수"입니다.';
+        }else{
+            comment=evenOdd+'는 "홀수"입니다.';
+        }
+        document.write(comment+"<br>");
+        //++,--
+        var increase=0;
+        var add=0;
+        ++increase;//1
+        document.write(increase+"<br>");//1
+        increase++;//1
+        document.write(increase+"<br>");//2
+        add=++increase;//3
+        document.write(add+","+increase+"<br>");//3,3
+        add=increase++;//3,3
+        document.write(add+","+increase);//3,4
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

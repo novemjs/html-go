@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function monthDay() {
+            var year = Number(document.getElementById("year").value);
+            var month = Number(document.getElementById("month").value);
+            //유효성검사(필요한 값들이 제대로 입력되었는지 입력되었으면 데이터 타입이 정확하게 적용되었는지 검사)
+            if (!year) {
+                alert("년도를 입력하세요");
+                return false;
+            }
+            if (!month) {
+                alert("월을 입력하세요");
+                return false;
+            }
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    document.write("입력하신 " + month + "월의 일수는 31일입니다.");
+                    break;
+                case 4: case 6: case 9: case 11:
+                    document.write("입력하신 " + month + "월의 일수는 30일입니다.");
+                    break;
+                case 2:
+                    var day;
+                    //윤년의 조건
+                    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+                        day = 29;
+                    } else {
+                        day = 28;
+                    }
+                    default:
+                        alert("메뉴를 다시 선택하세요");
+                    break;
+            }
+            document.write("입력하신 " + month + "월의 일수는 " + day + "일 입니다");
+
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <h2>년도,월에 대한 일수 구하기</h2>
+        <p>년도:<input type="text" name="year" id="year"></p>
+        <p>월:<input type="text" name="month" id="month"></p>
+        <p><input type="button" value="일수구하기" onclick="return monthDay();"></p>
+    </form>
+</body></html>

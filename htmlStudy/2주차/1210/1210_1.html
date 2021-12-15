@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .flexbox{
+            display: flex;
+            display: -webkit-flex;
+            height: 200px;
+            background: #ccc;
+            align-items: flex-start;
+            -webkit-align-items:flex-start;
+        }
+        .flexbox > div{
+            flex: 1;
+            -webkit-flex:1;
+            background: darkblue;
+            margin: 10px;
+            font-size: 20px;
+            color: #fff;
+        }
+        .flexbox > div:nth-child(3){
+            /*자식 요소중 특정 항목에 대해서만 세로로 정렬
+            flex-end로 지정되어 있으므로 하단에 위치시킨다.*/
+            align-self: flex-end;
+            -webkit-align-self:flex-end;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flexbox">
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+    </div>
+</body>
+</html>

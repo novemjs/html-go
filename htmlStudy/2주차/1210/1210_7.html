@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //단어와 단어가 합쳐진 변수이름 선언시 뒤에 나오는 단어의 첫번째 글자는 대문자로 표시(camel 표기법)
+        var inNum;
+        inNum = prompt("출력 페이지 수를 입력하세요!");
+        
+        //confirm문을 이용하여 확인,취소를 클릭시 별도 처리
+        if(!confirm("입력한 페이지 수를 출력하시겠습니까?")){
+            alert("출력을 취소하였습니다");
+        }else{
+            document.write("입력된 페이지수:" + "<font color='blue'>" + inNum + "</font color>" + "Page");
+        }
+        /*alert("자바스크립트");
+        document.write("자바스크립트");
+        console.log("자바스크립트");
+        confirm("정말 삭제 하시겠습니까?");*/
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

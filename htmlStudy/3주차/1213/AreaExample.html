@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        
+        var width;
+        var height;
+        var sum=0;
+        var a;
+        var b;
+        var c;
+        var sum2=0;
+        var sum3=0;
+        while(true){
+            var menu=Number(prompt("1.직사각형 2.삼각형 3.원 4.종료"));
+            if(menu==1){
+                width=Number(prompt("가로길이를 입력하세요"));
+                height=Number(prompt("세로길이를 입력하세요"));
+                sum=width*height;
+                alert("가로길이"+width+"이고"+"세로길이"+height+"인 직사각형의 면적은"+sum.toLocaleString()+"입니다.");
+            }else if(menu==2){
+                a=Number(prompt("밑변길이를 입력하세요"));
+                b=Number(prompt("높이를 입력하세요"));
+                sum2=a*b*(1/2);
+                alert("밑변길이가"+a+"이고"+"높이가"+b+"인 삼각형의 면적은"+sum2.toLocaleString()+"입니다.");
+            }else if(menu==3){
+                c=Number(prompt("반지름을 입력하세요"));
+                sum3=c*c*3.14;
+                alert("반지름이"+c+"인 원의 면적은"+sum3.toLocaleString()+"입니다.");
+            }else if(menu==4){
+                break;
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

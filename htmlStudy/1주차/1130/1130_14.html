@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본 테이블 만들기</title>
+</head>
+<style>
+    #tb{
+        width:300px;
+        height:300px;
+        border-collapse:collapse;/*선을합친다*/
+    }
+    td,th{
+        border:1px solid #000;
+    }
+    td{
+        text-align: center;
+    }
+    .sp1{
+        color:blue;
+    }
+    .sp2{
+        color:red;
+    }
+    .sp3{
+        color:purple;
+    }
+    </style>
+<body>
+    <h3>기본 구조를 가진표</h3>
+    <hr>
+    <table id="tb">
+        <caption style="color:blue; font-size:50px; font-family:맑은 고딕; background-color:yellow;">1학기 성적</caption>
+        <thead style="background-color:lightgreen;">
+            <tr>
+                <th>이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td><span class="sp1">황기태</span></td>
+                <td><span class="sp2">80</span></td>
+                <td><span class="sp3">70</span></td>
+            </tr>
+            <tr>
+                <td><span class="sp1">이재문</span></td>
+                <td><span class="sp2">95</span></td>
+                <td><span class="sp3">99</span></td>
+            </tr>
+            <tr>
+                <td><span class="sp1">이병은</span></td>
+                <td><span class="sp2">40</span></td>
+                <td><span class="sp3">61</span></td>
+            </tr> 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>합</th>
+                <th>225</th>
+                <th>230</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

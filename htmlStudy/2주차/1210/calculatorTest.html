@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <form onsubmit="return checkValue();"></form>
+    <table>
+       <caption>덧셈 계산기</caption>
+        <tr>
+            <td>첫번째숫자:</td>
+            <td><input type="text"name="num1" id="num1"></td>
+        </tr>
+        <tr>
+            <td>두번째숫자:</td>
+            <td>
+                <input type="text" name="num2" id="num2">
+            </td>
+        </tr>
+        <tr>
+            <td>결과</td>
+            <td>
+                <input type="text" name="result" id="result">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="계산"></td>
+        </tr>
+    </table>
+    <script>
+        function checkValue(){
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+            var result=parseInt(num1)+parseInt(num2);
+            document.getElementById("result").value="result";
+        }
+    </script>
+</body>
+</html>

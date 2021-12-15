@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <style>
+        /*전체선택자*/
+        *{
+            margin:10px;
+        }
+        /*id선택자*/
+        #container{
+            background: lightgray;
+        }
+        /*type선택자*/
+        h1{
+            background: beige;
+        }
+
+        span{
+            color: red;
+        }
+        /*h2 태그 뒤에 나오는 첫번째 p 인접선택자를 찾고 자식중에 span태그를 찾는다*/
+        h2+p>span{
+            color: blue;
+        }
+        /*class선택자*/
+        .tea1{
+            background: beige;
+        }
+        .a1{
+            color: blue;
+        }
+        .a2{
+            background-color: blue;
+            color:white;
+        }
+        div ul li p{
+            color:blue;
+        }
+    </style>
+<body>
+    <h1>건강한 하루</h1>
+    <div id="container">
+        <h2>건강해지는 차</h2>
+        <p>머리와 피부에 좋은 차는 어떤 것들일까.
+        <span>차의 종류</span>에 대해 알아보도록 합니다</p>
+        <ul>
+            <li class="tea1">
+                <h3>대나무차<span>15,000</span></h3>
+                <p>얼굴에 물을 주는 효과가 있다.</p>
+            </li>
+            <li class="tea2">
+                <h3>감잎차<span>14,000</span></h3>
+                <p style="background-color: blue; color: white">빈혈있는 사람에게 효과가 있다.</p>
+            </li>
+            <li class="tea3">
+                <h3>결명자차<span>20,000</span></h3>
+                <p>눈을 밝혀주는 효과가 있다.</p>
+                <p>보리차와 비슷하나 맛이 더 은은하고 구수하다.</p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

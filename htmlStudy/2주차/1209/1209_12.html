@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .flexbox {
+            display: flex;
+            display: -webkit- flex;
+            justify-content: space-between;
+            -webkit-justify-content:space-between;
+            height: 200px;
+            background: #ccc;
+        }
+
+        .flexbox>div {
+            flex: 0 0 100px;
+            -webkit- flex: 0 0 100px;
+            background: darkviolet;
+            margin: 10px;
+            font-size: 30px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flexbox">
+        <div>child-1</div>
+        <div>child-2</div>
+        <div>child-3</div>
+    </div>
+</body></html>

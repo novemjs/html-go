@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .letter2{
+            /*글자사이의 간격을 5px로 지정*/
+            letter-spacing: 5px;
+        }
+        .letter3{
+            /*단어사이의 간격을 2em= 2*16 =32px*/
+            word-spacing: 2em;
+        }
+        .letter4{
+            font-size: 8px;
+        }
+        .letter5{
+            word-spacing: 3em;
+        }
+    </style>
+</head>
+<body>
+    <p>1990년형 노트북은 안녕!<br> 잘가세요. 고생하셨소~<p>
+    <p class="letter2">
+        1990년형 노트북은 안녕!<br> 잘가세요. 고생하셨소~
+    </p>
+    <p class="letter3">
+        1990년형 노트북은 안녕!<br> 잘가세요. 고생하셨소~
+    </p>
+    <p class="letter4">
+        <span class="letter5">
+           <!--부모 p태그의 글자크기 8px*3=24px로 적용-->
+            1990년형 노트북은 안녕!<br> 잘가세요. 고생하셨소~
+        </span>
+    </p>
+</body>
+</html>

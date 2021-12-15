@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //즉시실행함수
+        (function(){
+            life();
+        })();
+        //선언적 함수
+         function life(){
+            document.write("즉시 실행 함수1"+"<br>");
+        }
+        //익명 함수
+        var instant=(function(){
+            document.write("즉시 실행 함수2");
+        })();
+        instant();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

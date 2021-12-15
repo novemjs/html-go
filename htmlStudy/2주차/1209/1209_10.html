@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .flexbox{
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            height: 200px;
+            background: #ccc;
+        }
+        .flexbox > div{
+            /*flew-grow:1이고 flex-shrink:0이고 flex-basis는100px*/
+            flex: 1;
+            -webkit-flex:1;
+            -ms-flex:1;
+            background: darkcyan;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+        <div><img src="/img/flex.png" alt="flex"></div>
+    </div>
+</body>
+</html>

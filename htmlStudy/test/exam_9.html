@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        fieldset {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="#" method="post">
+            <h1 style="text-align: center;">상품 주문서</h1>
+            <fieldset>
+                <legend style="color: darkblue;">개인 정보</legend>
+                <table>
+                    <tr>
+                        <th>이름</th>
+                        <td>
+                            <input type="text" name="name" id="name" placeholder="공백없이 입력하세요">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th>
+                        <td>
+                            <input type="text" name="add1" id="add1" placeholder="연락처를 입력하세요">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend style="color: darkblue;">배송 정보</legend>
+                <table>
+                    <tr>
+                        <th>주소</th>
+                        <td>
+                            <input type="text" name="add2" id="add2" placeholder="배송주소를 입력하세요">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>배송일</th>
+                        <td>
+                            <input type="text" name="day" id="day" placeholder="배송일을 입력하세요">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>요청사항</th>
+                        <td>
+                            <textarea rows="4" cols="50"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <input type="submit" value="주문하기">
+                            <input type="reset" value="취소">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

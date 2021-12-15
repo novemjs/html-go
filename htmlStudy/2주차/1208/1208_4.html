@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: url(/img/bg_grid.png);
+        }
+        p{
+            width: 600px;
+            height: 100px;
+            padding: 30px;
+            margin-bottom: 10px;
+            background: rgba(255,255,0,0.5);
+            border: 10px solid rgba(0,0,0,0.5);
+        }
+        .sizing{ 
+            /*elmenet 크기 지정할때 padding 혹은 테두리 미포함이므로 width 600px이적용됨*/
+            box-sizing:border-box;
+        }
+        .sizing_list{
+            width: 500px;
+            margin-top: 20px;
+        }
+        /*class선택자, 하위선택자*/
+        .sizing_list li{
+            list-style-type: none;
+            float: left;
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            background: rgba(0,0,100,0.3);
+        }
+        /*class선택자, 하위 선택자, 가상요소 선택자*/
+        .sizing_list li:nth-child(even){
+            background: rgba(0,0,100,0.15);
+        }
+        .sizing_list li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .sizing_list li a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+   <!--width 600px + padding 30*2=60px + border 20px = 680px-->
+    <p>It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="sizing">It's impossible not only starting good but also keeping it firm!!</p>
+    <ul class="sizing_list">
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Customer</a></li>
+        <li><a href="#">Community</a></li>
+    </ul>
+</body>
+</html>

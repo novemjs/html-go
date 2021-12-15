@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h2{
+            text-transform: capitalize;
+            text-decoration: underline;
+        }
+        ol > li:first-child{
+            color: blue;
+        }
+        ol > li:last-child{
+            color: red;
+        }
+        ol > li:nth-last-of-type(even){
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+       city map list
+    </h2>
+    <ul>
+        <li>부산시
+            <ol type="a" start="3">
+               <li>동래구</li>
+               <li>부산진구</li>
+               <li>북구</li>    
+            </ol>
+        </li>
+        <li>김해시
+            <ol type="1" start="10">
+                <li>진영</li>
+                <li>주촌</li>
+                <li>장유</li>    
+            </ol>
+        </li>
+    </ul>
+        
+</body>
+</html>

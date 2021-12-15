@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type: none;
+            margin: 5px;
+        }
+        .lnb li a{
+            display: block;
+            padding-left: 30px;
+            text-decoration: none;
+            font:25px Times;
+            color: #000;
+            background: url(/img/bg_sprite.png) no-repeat;
+            background-size: 26px 176px; /*이미지의 크기를 원래 이미지의 50%로 지정*/
+        }
+        /*이미지를 50%로 지정햇으므로 이미지 사이의 간격이 원래 100px인데 50px이 되고 이것을 세로좌표만 음수로 지정하여 이미지를 잘라 표시*/
+        .lnb li:nth-child(1) a{
+            background-position: 0 0;
+        }
+        .lnb li:nth-child(2) a{
+            background-position: 0 -50px;
+        }
+        .lnb li:nth-child(3) a{
+            background-position: 0 -100px;
+        }
+        .lnb li:nth-child(4) a{
+            background-position: 0 -150px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="lnb">
+        <li><a href="#">Theater</a></li>
+        <li><a href="#">Secret Garden</a></li>
+        <li><a href="#">Concert Hall</a></li>
+        <li><a href="#">Animal Farm</a></li>
+    </ul>
+</body>
+</html>

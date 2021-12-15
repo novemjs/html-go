@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var x=0,y=0,z=6,sum1=0,sum2=0;
+        //조건식이 상단에 있으므로 조건식이 거짓이면 while문 탈출
+        while(x<=5){
+            sum1+=x;
+            x++;
+        }
+        document.write("x:"+sum1+"<br>");
+        //조건식이 block 아래에 있으므로 조건식이 거짓이라도 반드시 block내의 명령문은 한번은 실행한다.
+        do{
+            sum2+=y;
+            y++;
+        }while(y<=5);
+        document.write("y:"+sum2+"<br>");
+        do{
+            z++
+        }while(z<=5);
+        document.write("z:"+z+"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

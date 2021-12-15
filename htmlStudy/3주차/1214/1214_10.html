@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //info라는 객체를 생성한다
+        //subject,credit의 property(속성)과 printOut(함수)로 구성됨
+        var info={
+            subject:"css",
+            credit:1,
+            printOut:function(){
+                return info.subject+","+info.credit+"학점";
+            }
+        };
+        document.write("과목"+info.subject+"<br>");
+        document.write("학점"+info.credit+"<br>");
+        document.write(info.printOut());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

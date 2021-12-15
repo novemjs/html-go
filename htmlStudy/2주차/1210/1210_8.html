@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var a = prompt("숫자를 입력하세요");
+        var evenOddCheck;
+        
+        if(!confirm("짝수 홀수 여부를 출력하시겠습니까?")){
+            alert("취소되었습니다.");
+        }else{
+            //2로나누어 나머지가0
+            if(a%2==0){
+               evenOddCheck="짝수입니다";
+            }else{
+               evenOddCheck="홀수입니다";
+            }
+            document.write("입력한숫자 " + a + " 는 " + evenOddCheck);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

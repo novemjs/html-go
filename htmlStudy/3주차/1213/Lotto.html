@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //1~300까지 난수발생
+        var rNum=Math.floor(Math.random()*300)+1;
+        //반복문 무한반복 제어 변수
+        var loopChk=true;
+        var inNum;
+        var inCount=0;
+        while(loopChk){
+            inNum=Number(prompt("숫자를 입력하세요"));
+            //난수를 맞추기위해 prompt문으로 입력한 숫자 카운트
+            inCount++;
+            if(inNum<rNum){
+                alert("난수보다 입력한 값이 작습니다. 큰값을 입력하세요!");  
+            }else if(inNum>rNum){
+                alert("난수보다 입력한 값이 큽니다. 작은값을 입력하세요!");
+            }else{
+                document.write("축하합니다."+inCount+" 번 만에 맞추셨군요!");
+                //당첨되면 반복문 중지
+                loopChk=false;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

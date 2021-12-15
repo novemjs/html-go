@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function outter(){
+            //내부함수는 외부함수의 지역변수에 접근이 가능한데 외부함수의 실행이 끝나고 외부함수가 소멸된 이후에도 내부함수가 외부함수의 변수에 접근이 허용되는것을 클로저(closure)라고한다.
+            var title="자바스크립트";
+            return function(){
+                alert(title);
+            }
+        }
+        inner=outter();
+        inner();
+    </script>
+</head>
+<body>
+        
+</body>
+</html>

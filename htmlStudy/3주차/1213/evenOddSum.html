@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function evenOddSum(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            var sum1=0;
+            var sum2=0;
+            var sum3=0;
+            for(var i=num1;i<=num2;i++){
+                if(i%2==0){
+                    sum1+=i;    
+                }else{
+                    sum2+=i;
+                }
+                sum3+=i;
+            }
+            document.write("짝수합:"+sum1.toLocaleString()+"<br>"+"홀수합:"+sum2.toLocaleString()+"<br>"+"총합:"+sum3.toLocaleString());
+        }
+    </script>
+</head>
+<body>
+  <form>
+      첫번째수:<input type="text" name="num1" id="num1"><br>
+      두번째수:<input type="text" name="num2" id="num2"><br>
+      <input type="submit" value="계산" onclick="evenOddSum();">
+  </form> 
+</body>
+</html>

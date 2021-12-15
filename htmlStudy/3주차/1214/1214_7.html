@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //전역변수
+        var sum1=10;
+        function add1(){
+            sum1=20;
+        }
+        add1();
+        document.write(sum1+"<br>");
+        
+        var sum2=30;
+        function add2(){
+            //지역변수이므로 블록내부에서 출력하면 지역변수의 값출력
+            var sum2=40;
+            document.write("지역"+sum2+"<br>");
+        }
+        add2();
+        document.write("전역"+sum2+"<br>");
+        
+        var num1=50;
+        if(num1===50){
+            var num1=60;//제어문(조건문,반복문)에서 var로 선언되면 전역변수
+        }
+        document.write(num1+"<br>");
+        //전역변수
+        let num2=70;
+        if(num2===70){
+            let num2=80;//제어문안에서 let으로 선언된 변수는 지역변수.
+            document.write("지역"+num2+"<br>");
+        }
+        document.write("전역"+num2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

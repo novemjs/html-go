@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*p태그의 첫글자 크기를 1.5배하라*/
+        p:first-letter{
+            font-size: 150%;
+        }
+        /*p태그 중에서 첫번째 것*/
+        p:first-child{
+            color:blue;
+        }
+        
+        p{
+            background-color: lightgray;
+        }
+        /*p태그중 마지막 것*/
+        p:last-child{
+            background: palegoldenrod;
+        }
+        /*p태그중 3번째*/
+        p:nth-child(3){
+            color: red;
+        }
+        /*p태그 전or앞*/
+        p:before{
+            content: "★";
+        }
+        /*<div>뒤에 content를추가*/
+        .box:after{
+            content: "항목을 선택해주세요.";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>COMPANY</p>
+        <p>PRODUCT</p>
+        <p>SERVICE</p>
+        <p>COMMUNITY</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid #000;
+            color: red;
+        }
+        input{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        function scoreCalc(){
+            var kor=Number(document.getElementById("kor").value);
+            var eng=Number(document.getElementById("eng").value);
+            var math=Number(document.getElementById("math").value);
+            var totalSum,avg,grade;
+            totalSum=kor+eng+math;
+            avg=Math.round(totalSum/3);
+            
+            if(avg>=90){
+               grade="A";
+            }else if(avg>=80){
+                grade="B";
+            }else if(avg>=70){
+                grade="C";
+            }else if(avg>=60){
+                grade="D";
+            }else{
+                grade="F";
+            }
+            //화면에 계산된 값을 출력
+            document.getElementById("totalSum").value=totalSum;
+            document.getElementById("avg").value=avg;
+            document.getElementById("grade").value=grade;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th colspan="2" style="color: blue;">성적표</th>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td><input type="text" name="kor" id="kor"></td>
+            </tr>
+            <tr>
+                <td>영어</td>
+                <td><input type="text" name="eng" id="eng"></td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td><input type="text" name="math" id="math"></td>
+            </tr>
+            <tr>
+                <td>총계</td>
+                <td><input type="text" name="totalSum" id="totalSum"></td>
+            </tr>
+            <tr>
+                <td>평균</td>
+                <td><input type="text" name="avg" id="avg"></td>
+            </tr>
+            <tr>
+                <td>학점</td>
+                <td><input type="text" name="grade" id="grade"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input style="background-color: lightgrey" type="button" value="성적처리" onclick="scoreCalc();"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

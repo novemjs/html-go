@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //전역변수로 프로그램 전체에 영향을 줌
+        //블록안에 선언한 변수는 지역변수(=로컬변수)라 하고 블록안에서만 영향을 줌
+        var width,height,radius,area;
+        
+        while(true){//true 지정하면 무한반복처리
+            
+            var menuNo=Number(prompt("메뉴:1.직사각형 2.삼각형 3.원 4.종료",""));
+            if(menuNo==1){
+                width=Number(prompt("가로길이:",""));
+                height=Number(prompt("세로길이",""));
+                area=width*height;
+                alert("가로길이"+width+"이고 세로길이"+height+" 인 직사각형의 면적은 "+area.toLocaleString()+" 입니다");
+            }else if(menuNo==2){
+                width=Number(prompt("밑변길이:",""));
+                height=Number(prompt("높이",""));
+                area=width*height*0.5;
+                alert("밑변길이"+width+"이고 높이"+height+" 인 삼각형의 면적은 "+area.toLocaleString()+" 입니다");
+            }else if(menuNo==3){
+                radius=Number(prompt("반지름:",""));
+                area=radius*radius*3.14;
+                alert("반지름 "+radius.toLocaleString()+"인 원의 면적은 "+area+"입니다.");
+            }else if(menuNo==4){
+                alert("프로그램을 종료합니다");
+                break;
+            }else{
+                alert("메뉴를 다시 선택하세요");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

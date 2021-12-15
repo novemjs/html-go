@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function validate(){
+            /*form에서 id속성의 이름이 id로 되어있는 것의 값을 가져와서 id 변수에 대입*/
+            var id=document.getElementById("id").value;
+            /*form에서 id속성의 이름이 pw로 되어있는 것의 값을 가져와서 pw 변수에 대입*/
+            var pw=document.getElementById("pw").value;
+            
+            if(!id){
+                alert("아이디 값을 입력하세요");
+                return false;
+            }
+            if(!pw){
+                alert("비밀번호 값을 입력하세요");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validate();"action="#" method="post">
+        <fieldset>
+            <legend>필수입력 유효성 검사</legend>
+            <p>
+                <label for="id">*아이디</label>
+                <input type="text" id="id" autocomplete="on" title="아이디입력">
+            </p>
+            <p>
+                <label for="pw">*비밀번호
+                </label><input type="password" id="pw" title="비밀번호입력">
+            </p>
+            <p>
+                <input type="submit" value="확인">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>

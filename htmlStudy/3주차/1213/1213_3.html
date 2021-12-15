@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <p>점심메뉴: 1.짜장면(5000원) 2.짬뽕(6000원) 3.탕수육(18000원)</p>
+        <p>메뉴선택:<input type="text" name="menuNo" id="menuNo"></p>
+        <p>메뉴수량:<input type="text" name="menu2" id="menu2"></p>
+        <input type="submit" value="주문계산" onclick="orderAmt();">
+        <input type="reset" value="주문취소">
+        
+    </form>
+    <script>
+        function orderAmt(){
+            var document.getElementById("menu1").value;
+            var document.getElementById("menu2").value;
+            var result=Number(menu1)*Number(menu2);
+            document.getElementById(result).value=result;
+        var menu3=5000;
+        var menu4=6000;
+        var menu5=18000;
+        
+        var menuName;
+        
+        var c;
+        if(b==1){
+            menuName="짜장면";
+            c=menu3*b;
+        }else if(b==2){
+            menuName="짬뽕";
+            c=menu4*b;
+        }else if(b==3){
+            menuName="탕수육";
+            c=menu5*b;
+        }else{
+            alert("메뉴를 다시 선택하세요");
+        }
+        document.write("주문하신 "+menuName+""+b+"개의 금액은"+c+"원입니다.");
+        }
+            
+    </script>
+</body>
+</html>

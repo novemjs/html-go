@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style-type: none;
+        }
+        h1{
+            padding: 10px 20px;
+            background: darkblue;
+            color: #fff;
+            font-size: 20px;
+        }
+        .gnb{
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            -webkit-flex-direction:column;
+        }
+        .gnb > li{
+            flex: 1;
+            -webkit-flex:1;
+            margin: 2px;
+        }
+        .gnb li a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            background: lightblue;
+            color: darkblue;
+        }
+        @media (min-width:768px) and (max-width:1024px){
+            .gnb{
+                flex-direction: row;
+                -webkit-flex-direction:row;
+                -ms-flex-direction:row;
+                justify-content: space-around;
+                -webkit-justify-content: space-around;
+                background: lightblue;
+            }
+            .gnb > li{
+                flex:0 0 80px;
+                -webkit-flex:0 0 80px;
+                -ms-flex:0 0 80px;
+                margin: 10px;
+            }
+            .gnb li a{
+                padding: 0;
+
+            }
+        }
+        @media (min-width:1025px){
+            .gnb{
+                /*수직정렬*/
+                justify-content:space-between;
+                -webkit-justify-content:space-between;
+            }
+            .gnb li a{
+                background-color:red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>regarding FLEX...</h1>
+            <ul class="gnb">
+                <li><a href="#">company</a></li>
+                <li><a href="#">service</a></li>
+                <li><a href="#">customer</a></li>
+                <li><a href="#">community</a></li>
+            </ul>
+    </header>
+</body>
+</html>

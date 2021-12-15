@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function add(num1,num2){
+            var result=num1+num2;
+            
+            return result;
+        }
+        function minus(num1,num2){
+            var result=num1-num2;
+            return result;
+        }
+        function mul(num1,num2){
+            var result=num1*num2;
+            return result;
+        }
+        function div(num1,num2){
+            var result=num1/num2;
+            return result;
+        }
+        function numberCalc(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            document.write(num1+"+"+num2+"="+add(num1,num2).toLocaleString()+"<br>");
+            document.write(num1+"-"+num2+"="+minus(num1,num2).toLocaleString()+"<br>");
+            document.write(num1+"*"+num2+"="+mul(num1,num2).toLocaleString()+"<br>");
+            document.write(num1+"/"+num2+"="+div(num1,num2).toLocaleString());
+        }
+    </script>
+</head>
+<body>
+    <h2>계산기</h2>
+    <p>첫번째수:<input type="text" name="num1" id="num1"></p>
+    <p>두번째수:<input type="text" name="num2" id="num2"></p>
+    <input type="button" value="계산" onclick="numberCalc();">
+</body>
+</html>
